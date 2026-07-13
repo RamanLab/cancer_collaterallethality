@@ -104,6 +104,10 @@ tissueModel = fastCoreWeighted(findRxnIDs(model,HCR), model, costbase, 1e-6);
 tissueModel_rxns{p} = HCR;  % Store the core reactions
 % Update reaction matrix using findRxnIDs
 rxnIndices = findRxnIDs(model, HCR);
+
+%tissueModel_rxns{p} = model.rxns(tissueModel);
+%rxnIndices = tissueModel;
+
 rxn_mat(rxnIndices, p) = 1;
 
 % Create currentModel by removing unused reactions
